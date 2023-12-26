@@ -1,0 +1,17 @@
+.table {
+
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+}
+
+.table-item {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.table-item>div {
+    padding: 12px;
+    border-bottom: 1px solid #ebebeb;
+}

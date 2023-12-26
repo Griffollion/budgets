@@ -1,0 +1,1 @@
+export {default as ResultTable} from './ui/ResultTable'
