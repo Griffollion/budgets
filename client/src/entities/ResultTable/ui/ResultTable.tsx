@@ -23,12 +23,9 @@ function ResultTable({ data, ...props }: ResultTableProps) {
   };
 
   return (
-    <>
-    {data && <div className={styles['table']}>
+    <div className={styles['table']}>
       {renderItems()}
-    </div> }
-    </>
-
+    </div>
   );
 }
 
