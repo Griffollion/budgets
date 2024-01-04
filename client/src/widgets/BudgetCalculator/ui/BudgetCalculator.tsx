@@ -3,6 +3,7 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form"
 import { ResultTable } from "entities/ResultTable";
 import { useState } from "react";
 import { Button, Space, Input, Form } from 'antd';
+import styles from './BudgetCalculator.module.css'
 
 type Inputs = {
     budget: number,
@@ -53,11 +54,14 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                 autoComplete="off"
                 onFinish={handleSubmit(onSubmit)}
                 style={{ maxWidth: 600 }}
+                className={styles['form']}
             >
                 <Form.Item
                     label="Сумма дохода"
                     validateStatus={errors.budget ? "error" : ''}
                     help={errors.budget ? "Поле обязательно для заполнения" : ''}
+                    style={{ marginBottom: "0px" }}
+
                 >
                     <Controller
                         name="budget"
@@ -71,6 +75,7 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                     label="Сумма на жизнь"
                     validateStatus={errors.lifeSum ? "error" : ''}
                     help={errors.lifeSum ? "Поле обязательно для заполнения" : ''}
+                    style={{ marginBottom: "0px" }}
                 >
                     <Controller
                         name="lifeSum"
@@ -85,6 +90,7 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                     label="Процент себе"
                     validateStatus={errors.youselfPercent ? "error" : ''}
                     help={errors.youselfPercent ? "Поле обязательно для заполнения" : ''}
+                    style={{ marginBottom: "0px" }}
                 >
                     <Controller
                         name="youselfPercent"
@@ -99,6 +105,7 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                     label="Процент на развлечения"
                     validateStatus={errors.entertainmentPercent ? "error" : ''}
                     help={errors.entertainmentPercent ? "Поле обязательно для заполнения" : ''}
+                    style={{ marginBottom: "0px" }}
                 >
                     <Controller
                         name="entertainmentPercent"
@@ -114,6 +121,7 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                     label="Процент на подарки"
                     validateStatus={errors.giftsPercent ? "error" : ''}
                     help={errors.giftsPercent ? "Поле обязательно для заполнения" : ''}
+                    style={{ marginBottom: "0px" }}
                 >
                     <Controller
                         name="giftsPercent"
@@ -129,6 +137,7 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                     label="Процент на благотворительность"
                     validateStatus={errors.charityPercent ? "error" : ''}
                     help={errors.charityPercent ? "Поле обязательно для заполнения" : ''}
+                    style={{ marginBottom: "0px" }}
                 >
                     <Controller
                         name="charityPercent"
@@ -145,6 +154,7 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                     label="Процент на покупки"
                     validateStatus={errors.purchasesPercent ? "error" : ''}
                     help={errors.purchasesPercent ? "Поле обязательно для заполнения" : ''}
+                    style={{ marginBottom: "0px" }}
                 >
                     <Controller
                         name="purchasesPercent"
@@ -160,6 +170,7 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                     label="Процент на накопления"
                     validateStatus={errors.savingsPercent ? "error" : ''}
                     help={errors.savingsPercent ? "Поле обязательно для заполнения" : ''}
+                    style={{ marginBottom: "0px" }}
                 >
                     <Controller
                         name="savingsPercent"
@@ -171,7 +182,9 @@ function BudgetCalculator({ test }: BudgetCalculatorProps) {
                     {errors.savingsPercent && <div>Поле обязательно для заполнения</div>}
                 </Form.Item>
 
-                <Form.Item>
+                <Form.Item
+                    style={{ marginBottom: "0px" }}
+                >
                     <Button block={true} htmlType="submit" size="large" type="primary">Отправить</Button>
                 </Form.Item>
             </Form>

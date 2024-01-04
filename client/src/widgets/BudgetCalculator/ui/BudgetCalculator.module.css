@@ -1,0 +1,8 @@
+.form {
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
